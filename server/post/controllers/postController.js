@@ -1,23 +1,24 @@
 const Post = require('../models/postModel');
+const sharp = require('sharp');
 
 // @route POST /posts
 const createPost = async (req, res) => {
     const { category, title, description } = req.body;
-    // const { image } = req.files;
+    const { file } = req;
 
     (!category || !title || !description) ? (
         res.status(400).json({ message: `all fields are required` })
     ) : null;
 
-    image.mv(__dirname + '../upload/' + image.name);
+    const imageName = `${Date.now()}-${file.originalname}`;
+    await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toFile(`./images/${imageName}`);
 
     const post = await Post.create({
         category: category,
         title: title,
         description: description,
-        // image: image.name,
+        image: imageName,
     });
-
     res.status(200).json(post);
 }
 
