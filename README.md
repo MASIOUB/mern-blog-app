@@ -5,8 +5,11 @@ Cette application de blog en stack MERN permet de créer et gérer facilement de
 # Technologies utilisées:
 
 MongoDB : une base de données NoSQL utilisée pour stocker les articles de blog et les catégories.
+
 Express.js : une framework pour Node.js utilisé pour construire l'API backend.
+
 React.js : une bibliothèque JavaScript pour la création d'interfaces utilisateur utilisée pour construire le frontend.
+
 Node.js : Permet d'exécuter du code JavaScript sur le serveur.
 
 # Installation:
@@ -55,3 +58,21 @@ npm start
 ```
 Ouvrir le navigateur web et aller à l'address suivant:
 http://localhost:3000/
+
+# API List:
+
+=> Pour les catégories:
+- GET /categories : Permet d'obtenir toutes les catégories.
+
+- POST /categories : Permet d'ajouter une nouvelle catégorie.
+
+- PUT /categories/:id : Permet de modifier une catégorie.
+
+=> Pour les blogs:
+- GET /posts : Permet de lister tous les blogs.
+
+- POST /posts : Permet d'ajouter un nouveau blog.
+
+- GET /posts/:id : Permet d'afficher un blog.
+
+- PUT /posts/:id : Permet de modifier un blog.
